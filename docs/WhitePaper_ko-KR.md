@@ -536,9 +536,10 @@ X.Blockchain 상에서의 Block 생성 주기를 3초로 계산할 때, 201,600�
   
 X.Blockchain 에서 안건 발의(Proposal)와 투표(Voting)로 변경 가능한 요소는 다음과 같다.  
   
-* **RewardAmount** : 블록당 보상량. 새로 채굴되는 자산의 양을 의미한다.
-* **ValidatorRewardRate** : RewardAmount + Sum(TxFee) 에 대한 Validator 보상 비율.
-* **DelegatorRewardRate** : RewardAmount + Sum(TxFee) 에 대한 Delegator 보상 비율.
+* ~~**RewardAmount** : 블록당 보상량. 새로 채굴되는 자산의 양을 의미한다.~~
+* ~~**ValidatorRewardRate** : RewardAmount + Sum(TxFee) 에 대한 Validator 보상 비율.~~
+* ~~**DelegatorRewardRate** : RewardAmount + Sum(TxFee) 에 대한 Delegator 보상 비율.~~
+* **RewardXtoPerCoin** : 블록 생성시 새로 발행되어 주어지는 보상량. 블록 합의에 참여하기 위하여 동결된 자산의 10<sup>18</sup>xto 당 지급되는 보상량을 xto 단위로 명시한 값이다. (1Coin = 10<sup>18</sup>xto)
 * **MinCommonTxFee** : Tx. 이 처리되기 위한 최소 수수료. 이 값보다 큰 수수료를 지불하는 Tx. 중 높은 수수료를 지불하는 Tx. 이 먼저 처리될 것이다. 반면에 이 값 보다 작은 수수료를 지불하는 Tx. 은 처리 되지 않을 뿐만 아니라 주변 노드로 전파도 이루어지지 않는다.  
 이 값은 모든 Tx. 에 대하여 동일하지 않고 종류별로 다른 값으로 지정된다.
 * **MinBondingTxFee** : TxBonding 에 대한 최소 수수료.
