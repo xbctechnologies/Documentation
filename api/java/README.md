@@ -12,13 +12,13 @@
 <dependency>
     <groupId>com.xbctechnologies</groupId>
     <artifactId>xcube-core</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 </dependency>
 ```
 
 ## Gradle 설정
 ```gradle
-compile group: 'com.xbctechnologies', name: 'xcube-core', version: '0.1.0'
+compile group: 'com.xbctechnologies', name: 'xcube-core', version: '0.1.1'
 ```
 
 ## Tutorial
