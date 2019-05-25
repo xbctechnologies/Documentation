@@ -54,7 +54,7 @@ version: '3'
 
 # same as
 # docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
-#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.1.1
+#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.1.2
 
 services:
    xnode:
