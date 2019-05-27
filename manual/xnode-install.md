@@ -14,8 +14,7 @@ $ mkdir -p $HOME/.xnode
 
 $ docker run -d -p 8282:28282 \
       -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
-      --testnet \
-      --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
+      --testnet
 ```
 
 The `-v $HOME/.xnode:/xnodedata` part of the command mounts the `$HOME/.xnode` directory from the underlying host system as `/xnodedata` inside the container, where xnode will write its block data and log files.
@@ -29,8 +28,7 @@ For example, you could run xnode container like this:
 ```bash
 $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
       -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
-      --testnet --rpcenable --wsenable \
-      --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
+      --testnet --rpcenable --wsenable
 ```
 
 The `--seedlist ...` indicates a seed node for just **testnet** not mainnet.  
