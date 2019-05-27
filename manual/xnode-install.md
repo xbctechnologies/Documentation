@@ -2,7 +2,7 @@
 
 ### Download docker image
 ```bash
-$ docker pull xblockchain/xnode:1.3.0
+$ docker pull xblockchain/xnode:1.0.0
 ```
 
 ### Run xnode container
@@ -13,7 +13,7 @@ And start your xnode container like this:
 $ mkdir -p $HOME/.xnode
 
 $ docker run -d -p 8282:28282 \
-      -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.3.0 \
+      -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
       --testnet \
       --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
 ```
@@ -28,7 +28,7 @@ If you want for the xnode to run as WebSocket Server, you should add `-p {local_
 For example, you could run xnode container like this:  
 ```bash
 $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
-      -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.3.0 \
+      -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
       --testnet --rpcenable --wsenable \
       --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
 ```
@@ -54,11 +54,11 @@ version: '3'
 
 # same as
 # docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
-#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.3.0
+#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0
 
 services:
    xnode:
-      image: xblockchain/xnode:1.3.0
+      image: xblockchain/xnode:1.0.0
       volumes:
          - $HOME/.xnode:/xnodedata
       ports:
@@ -74,13 +74,13 @@ version: '3'
 
 # same as
 # docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
-#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.3.0 \
+#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
 #     --testnet --rpcenable --wsenable \
 #     --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
 
 services:
    xnode:
-      image: xblockchain/xnode:1.3.0
+      image: xblockchain/xnode:1.0.0
       volumes:
          - $HOME/.xnode:/xnodedata
       ports:
