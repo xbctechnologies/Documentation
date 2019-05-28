@@ -10,12 +10,18 @@ Create a data directory on a suitable volume on your host system, e.g. `$HOME/.x
 And start your xnode container like this:
 
 ```bash
-$ mkdir -p $HOME/.xnode
-
-$ docker run -d -p 8282:28282 \
-      -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
-      --testnet
+// Mainnet
+$ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
+      xblockchain/xnode:1.0.0 \
 ```
+
+```bash
+// Testnet
+$ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
+      xblockchain/xnode:1.0.0 \
+      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:28282
+```
+
 
 The `-v $HOME/.xnode:/xnodedata` part of the command mounts the `$HOME/.xnode` directory from the underlying host system as `/xnodedata` inside the container, where xnode will write its block data and log files.
 
@@ -26,9 +32,16 @@ If you want for the xnode to run as WebSocket Server, you should add `-p {local_
 
 For example, you could run xnode container like this:  
 ```bash
-$ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
-      -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
-      --testnet --rpcenable --wsenable
+// Mainnet
+$ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnodedata \
+      xblockchain/xnode:1.0.0 --rpcenable --wsenable
+```
+
+```bash
+// Testnet
+$ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnodedata \
+      xblockchain/xnode:1.0.0 --rpcenable --wsenable \
+      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:28282
 ```
 
 The `--seedlist ...` indicates a seed node for just **testnet** not mainnet.  
