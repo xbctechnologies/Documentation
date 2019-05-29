@@ -12,7 +12,7 @@ And start your xnode container like this:
 ```bash
 // Mainnet
 $ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
-      xblockchain/xnode:1.0.0 \
+      xblockchain/xnode:1.0.0
 ```
 
 ```bash
