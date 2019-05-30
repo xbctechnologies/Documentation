@@ -19,7 +19,7 @@ $ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
 // Testnet
 $ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
       xblockchain/xnode:1.0.0 \
-      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:28282
+      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:8282
 ```
 
 
@@ -41,7 +41,7 @@ $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnode
 // Testnet
 $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnodedata \
       xblockchain/xnode:1.0.0 --rpcenable --wsenable \
-      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:28282
+      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:8282
 ```
 
 The `--seedlist ...` indicates a seed node for just **testnet** not mainnet.  
