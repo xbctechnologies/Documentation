@@ -63,8 +63,9 @@ To use xnode setup edit the `docker-compose.yml` file.
 ```
 version: '3'
 
+# Mainnet
 # same as
-# docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
+# docker run -d -p 8282:28282 \
 #     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0
 
 services:
@@ -74,8 +75,6 @@ services:
          - $HOME/.xnode:/xnodedata
       ports:
          - 8282:28282
-         - 7979:27979
-         - 7978:27978
 ```
 
 
