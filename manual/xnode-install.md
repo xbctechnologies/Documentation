@@ -2,7 +2,7 @@
 
 ### Download docker image
 ```bash
-$ docker pull xblockchain/xnode:1.0.0
+$ docker pull xblockchain/xnode
 ```
 
 ### Run xnode container
@@ -12,13 +12,13 @@ And start your xnode container like this:
 ```bash
 // Mainnet
 $ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
-      xblockchain/xnode:1.0.0
+      xblockchain/xnode
 ```
 
 ```bash
 // Testnet
 $ docker run -d -p 8282:28282 -v $HOME/.xnode:/xnodedata \
-      xblockchain/xnode:1.0.0 \
+      xblockchain/xnode \
       --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:8282
 ```
 
@@ -34,13 +34,13 @@ For example, you could run xnode container like this:
 ```bash
 // Mainnet
 $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnodedata \
-      xblockchain/xnode:1.0.0 --rpcenable --wsenable
+      xblockchain/xnode --rpcenable --wsenable
 ```
 
 ```bash
 // Testnet
 $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnodedata \
-      xblockchain/xnode:1.0.0 --rpcenable --wsenable \
+      xblockchain/xnode --rpcenable --wsenable \
       --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:8282
 ```
 
@@ -66,11 +66,11 @@ version: '3'
 # Mainnet
 # same as
 # docker run -d -p 8282:28282 \
-#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0
+#     -v $HOME/.xnode:/xnodedata xblockchain/xnode
 
 services:
    xnode:
-      image: xblockchain/xnode:1.0.0
+      image: xblockchain/xnode
       volumes:
          - $HOME/.xnode:/xnodedata
       ports:
@@ -84,13 +84,13 @@ version: '3'
 
 # same as
 # docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
-#     -v $HOME/.xnode:/xnodedata xblockchain/xnode:1.0.0 \
+#     -v $HOME/.xnode:/xnodedata xblockchain/xnode \
 #     --testnet --rpcenable --wsenable \
 #     --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
 
 services:
    xnode:
-      image: xblockchain/xnode:1.0.0
+      image: xblockchain/xnode
       volumes:
          - $HOME/.xnode:/xnodedata
       ports:
