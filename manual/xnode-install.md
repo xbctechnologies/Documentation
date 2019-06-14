@@ -41,7 +41,7 @@ $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnode
 // Testnet
 $ docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 -v $HOME/.xnode:/xnodedata \
       xblockchain/xnode:stable --rpcenable --wsenable \
-      --testnet --seedlist bf17fa643c6997e03f581ab2004cd374c530f8b7@52.78.229.153:8282
+      --testnet
 ```
 
 The `--seedlist ...` indicates a seed node for just **testnet** not mainnet.  
@@ -85,8 +85,7 @@ version: '3'
 # same as
 # docker run -d -p 8282:28282 -p 7979:27979 -p 7978:27978 \
 #     -v $HOME/.xnode:/xnodedata xblockchain/xnode:stable \
-#     --testnet --rpcenable --wsenable \
-#     --seedlist 07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282
+#     --testnet --rpcenable --wsenable
 
 services:
    xnode:
@@ -101,7 +100,6 @@ services:
          - "--testnet"
          - "--rpcenable"
          - "--wsenable"
-         - "--seedlist=07a26056b9a38f0588a8397685b9344606e4bc89@52.78.229.153:8282"
 ```
 
 To run an xnode docker cluster run the following:
