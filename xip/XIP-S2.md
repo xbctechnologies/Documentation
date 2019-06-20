@@ -8,8 +8,8 @@
 동일 계정에 대하여 Bonding Tx 과 Common Tx 이 동시에 발생하는 경우, 또 이 두 Tx 에 명시된 자산의 합이 해당 계정의 가용 자산을 초과 할 수 있다. 이 때, 노드별로 어떤 Tx 이 먼저 처리 되느냐에 따라서 각 노드의 ```CheckTx``` 를 통과 한 Tx 집합은 달라지게 될 것이다. 최종적으로 살아 남아 블록에 기록되는 Tx 은 해당 시점에 Proposer 역할을 하는 Validator 노드에서 어떤 Tx 이 살아 남는가에 의하여 결정될 것이다.
 
 #### Unbonding Assets
-동결 해제는 Unbonding Tx 을 통해 처리된다. 특정 계정에 대한 Unbonding Tx 은 Bonding Tx 이 처리된 이후 (B<sub>n+1</sub> 부터) 언제라도 발생될 수 있다. Unbonding Tx 이 B<sub>m</sub> 에 기록되었다면, 실제 해당 자산의 이동은 B<sub>m+201600</sub> 부터 가능해 진다.  
-X.Blockchain 상에서의 Block 생성 주기를 3초로 계산할 때, 201,600개 블록 생성에는 7일이 소요된다. 즉 Unbonding Tx 이 발생한 시점으로 부터 대략 7일 이후에 실질적인 동결 해제가 완료되어 자산이동이 가능한 상태가 된다.  
+동결 해제는 Unbonding Tx 을 통해 처리된다. 특정 계정에 대한 Unbonding Tx 은 Bonding Tx 이 처리된 이후 (B<sub>n+1</sub> 부터) 언제라도 발생될 수 있다. Unbonding Tx 이 B<sub>m</sub> 에 기록되었다면, 실제 해당 자산의 이동은 B<sub>m+403200</sub> 부터 가능해 진다.  
+X.Blockchain 상에서의 Block 생성 주기를 3초로 계산할 때, 403,200개 블록 생성에는 14일이 소요된다. 즉 Unbonding Tx 이 발생한 시점으로 부터 대략 7일 이후에 실질적인 동결 해제가 완료되어 자산이동이 가능한 상태가 된다.  
 
 <br />
 <p align="center">
