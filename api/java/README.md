@@ -45,6 +45,13 @@ String passPhrase = "password";
 String account = xCube.createAccount(passPhrase, keystoreDir);
 ```
 
+```java
+String [] result = xCube.createAccountAndPrivateKey();
+
+String privateKey = result[0];
+String account = result[1];
+```
+
 ### Signing
 계좌의 트랜잭션 처리를 하기 위해서는 신뢰할 수 있는 요청이 필요하며 이것은 자신의 패스워드와 키파일을 사용하여 서명(Signing)을 한 후에 트랜잭션을 요청한다. Signing 하기 위해  패스워드와 Key 파일의 디렉토리를 지정해줘야 합니다. 이 후 트랜잭션 요청시 이 정보를 사용하여 signing한 트랜잭션을 내부적으로 생성한 후 XNode에 전송합니다.
 ```java
@@ -54,6 +61,10 @@ if (xCube.loadKeyStore(account, keystoreDir)) {
 } else {
     System.err.printf("There is not a account(%s)'s keystore in %s\n", account, keystoreDir);
 }
+```
+
+```java
+xCube.setPrivateKey(privateKey);
 ```
 
 ### 트랜잭션 요청
